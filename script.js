@@ -1,7 +1,27 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice() {}
+function getComputerChoice() {
+  let computerChoice;
+  let num = Math.floor(Math.random() * 3);
+  switch (num) {
+    case 0:
+      computerChoice = "Rock";
+      break;
+    case 1:
+      computerChoice = "Scissors";
+      break;
+    case 2:
+      computerChoice = "Paper";
+      break;
+    default:
+      computerChoice = "No value found.";
+  }
+  console.log(computerChoice);
+  return computerChoice;
+}
+
+getComputerChoice();
 
 function getHumanChoice() {
   let humanChoice = prompt("Enter your choice human! Rock, paper & scissors?");
