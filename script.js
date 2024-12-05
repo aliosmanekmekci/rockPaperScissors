@@ -32,6 +32,11 @@ function playGame() {
     playRound();
   }
   console.log(`computer: ${computerScore} & human: ${humanScore}`);
+  if (humanScore > computerScore) {
+    console.log(`Game is finished! LAST RESULT: Human win! I mean you!! With the score of ${humanScore}`);
+  } else {
+    console.log(`Game is finished! LAST RESULT: Computer win!😀`);
+  }
 }
 
 playGame();
