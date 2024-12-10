@@ -7,7 +7,11 @@ function getComputerChoice() {
 }
 function getHumanChoice() {
   let humanInput = prompt("Rock, paper or scissors?");
-  return humanInput.toLowerCase();
+  if (humanInput.toLowerCase() === "rock" || "paper" || "scissors") {
+    return humanInput.toLowerCase();
+  } else {
+    console.log("Invalid input! Please write a valid choice!");
+  }
 }
 function playRound() {
   const humanHand = getHumanChoice();
@@ -19,11 +23,20 @@ function playRound() {
     (humanHand === "paper" && computerHand === "rock") ||
     (humanHand === "scissors" && computerHand === "paper")
   ) {
-    console.log(`Human win! ${humanHand} beats ${computerHand}`);
+    console.log(`Human win! (human choice) ${humanHand} beats (computer choice) ${computerHand}`);
     humanScore++;
-  } else {
-    console.log(`Human win! ${computerHand} beats ${humanHand}`);
+  } else if (
+    (computerHand === "rock" && humanHand === "scissors") ||
+    (computerHand === "paper" && humanHand === "rock") ||
+    (computerHand === "scissors" && humanHand === "paper")
+  ) {
+    console.log(`Computer win! ${computerHand} beats ${humanHand}`);
     computerScore++;
+  } else {
+    console.log(`Invalid Value!`);
+    computerScore = 0;
+    humanScore = 0;
+    playGame();
   }
 }
 
