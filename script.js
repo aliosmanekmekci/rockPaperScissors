@@ -8,9 +8,10 @@ function getComputerChoice() {
 function getHumanChoice() {
   let humanInput = prompt("Rock, paper or scissors?");
   if (humanInput.toLowerCase() === "rock" || "paper" || "scissors") {
+    console.log(humanInput);
     return humanInput.toLowerCase();
   } else {
-    console.log("Invalid input! Please write a valid choice!");
+    console.error("Invalid input! Please write a valid choice!");
   }
 }
 function playRound() {
