@@ -26,12 +26,16 @@ function getComputerChoice() {
 
 // Function to check for a winner
 function checkWinner() {
+  const resultDisplay = document.querySelector("#result");
+
   if (humanScore + computerScore === 5 && humanScore > computerScore) {
     winnerDisplay.textContent = "Human wins the game!";
     disableButtons();
+    resultDisplay.textContent = "";
   } else if (computerScore + humanScore === 5 && computerScore > humanScore) {
     winnerDisplay.textContent = "Computer wins the game!";
     disableButtons();
+    resultDisplay.textContent = "";
   }
 }
 
